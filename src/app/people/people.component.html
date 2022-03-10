@@ -1,0 +1,21 @@
+<div style="text-align: center;">
+  <button style="cursor: pointer;" (click)="add()">+</button>
+</div>
+
+<div class="box">
+    <!-- ngFor -->
+    <!-- Property Binding between components -->
+    <app-person
+      *ngFor="let personElement of people; let i = index"
+      [person]="personElement"
+      [index]="i"
+    >
+    </app-person>
+  </div>
+  
+  <!-- <div class="box">
+    Event Binding between components
+    <app-form (personCreated)="addPerson($event)"></app-form>
+  </div> -->
+
+  <router-outlet></router-outlet>

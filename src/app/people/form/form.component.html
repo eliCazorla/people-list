@@ -1,0 +1,33 @@
+<div class="box">
+  <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && onSavePerson()">
+    <!-- Local reference: se le manda informacion desde la plantilla al componente pero no al reves 
+    como en two way binding -->
+    <!-- <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Name"
+      #nameInput
+      required
+    /> -->
+    
+    <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Name"
+      [(ngModel)]="nameInput"
+      required
+    />
+    <input
+      type="text"
+      name="lastName"
+      id="lastName"
+      placeholder="Last Name"
+      [(ngModel)]="lastNameInput"
+      required
+    />
+    <button type="submit" style="cursor: pointer;">+</button>
+    <button *ngIf="index != null" type="submit" style="cursor: pointer;" class="buttonRed" (click)="deletePerson()">-</button>
+  </form>
+</div>

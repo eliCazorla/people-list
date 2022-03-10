@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Person } from './interfaces/Person';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'list-people';
+  title = 'People List';
 }
