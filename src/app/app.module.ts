@@ -10,6 +10,8 @@ import { PeopleService } from './people.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PeopleComponent } from './people/people.component';
 import { ErrorComponent } from './error/error.component';
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,11 @@ import { ErrorComponent } from './error/error.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   //Al registrar el servicio aqui todos los componentes comparten la misma instancia.
-  providers: [LoggingService, PeopleService],
+  providers: [LoggingService, PeopleService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
