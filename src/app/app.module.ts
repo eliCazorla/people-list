@@ -12,6 +12,8 @@ import { PeopleComponent } from './people/people.component';
 import { ErrorComponent } from './error/error.component';
 import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     PersonComponent,
     FormComponent,
     PeopleComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   //Al registrar el servicio aqui todos los componentes comparten la misma instancia.
-  providers: [LoggingService, PeopleService, DataService],
+  providers: [LoggingService, PeopleService, DataService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

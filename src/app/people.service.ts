@@ -39,9 +39,19 @@ export class PeopleService {
     let person = this.people[index];
     person.name = personToSave.name;
     person.lastName = personToSave.lastName;
+    this.dataService.modifyPerson(index, personToSave);
   }
 
   deletePerson(index: number): void {
     this.people.splice(index, 1);
+    this.dataService.deletePerson(index);
+    //we save the array again to regenerate indexes on the db.
+    this.modifyPeople();
+  }
+
+  modifyPeople(): void {
+    if (this.people != null) {
+      this.dataService.savePeople(this.people);
+    }
   }
 }
